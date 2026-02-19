@@ -1,0 +1,42 @@
+{
+  "name": "ConfiguracaoDashboard",
+  "type": "object",
+  "properties": {
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "position": {
+            "type": "number"
+          },
+          "visible": {
+            "type": "boolean"
+          }
+        }
+      },
+      "description": "Lista de widgets e suas configura\u00e7\u00f5es"
+    }
+  },
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  },
+  "required": []
+}
