@@ -1,0 +1,51 @@
+{
+  "name": "Habito",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome do h\u00e1bito"
+    },
+    "objetivo_diario": {
+      "type": "number",
+      "description": "Meta di\u00e1ria (ex: 30 minutos)"
+    },
+    "unidade": {
+      "type": "string",
+      "description": "Unidade de medida (minutos, litros, p\u00e1ginas, etc)"
+    },
+    "progresso_atual": {
+      "type": "number",
+      "default": 0,
+      "description": "Progresso no dia atual"
+    },
+    "dias_seguidos": {
+      "type": "number",
+      "default": 0,
+      "description": "Sequ\u00eancia de dias cumpridos"
+    },
+    "cor": {
+      "type": "string",
+      "default": "#6366F1",
+      "description": "Cor do h\u00e1bito"
+    }
+  },
+  "required": [
+    "nome",
+    "objetivo_diario"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
