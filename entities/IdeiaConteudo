@@ -1,0 +1,55 @@
+{
+  "name": "IdeiaConteudo",
+  "type": "object",
+  "properties": {
+    "tema": {
+      "type": "string",
+      "description": "Tema da ideia"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "educativa",
+        "viral",
+        "autoridade",
+        "venda"
+      ],
+      "default": "educativa",
+      "description": "Categoria da ideia"
+    },
+    "formato": {
+      "type": "string",
+      "description": "Formato sugerido (Reels, Story, Carrossel)"
+    },
+    "duracao": {
+      "type": "string",
+      "description": "Dura\u00e7\u00e3o sugerida"
+    },
+    "exemplo": {
+      "type": "string",
+      "description": "Exemplo pr\u00e1tico"
+    },
+    "usada": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "tema",
+    "categoria"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
