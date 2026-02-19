@@ -1,0 +1,61 @@
+{
+  "name": "Transacao",
+  "type": "object",
+  "properties": {
+    "descricao": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o da transa\u00e7\u00e3o"
+    },
+    "valor": {
+      "type": "number",
+      "description": "Valor da transa\u00e7\u00e3o"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "receita",
+        "despesa"
+      ],
+      "description": "Tipo de transa\u00e7\u00e3o"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "trabalho",
+        "alimentacao",
+        "transporte",
+        "saude",
+        "lazer",
+        "educacao",
+        "casa",
+        "outros"
+      ],
+      "default": "outros"
+    },
+    "data": {
+      "type": "string",
+      "format": "date",
+      "description": "Data da transa\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "descricao",
+    "valor",
+    "tipo",
+    "data"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
