@@ -1,0 +1,42 @@
+{
+  "name": "AnotacaoConteudo",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "description": "T\u00edtulo da anota\u00e7\u00e3o"
+    },
+    "conteudo": {
+      "type": "string",
+      "description": "Conte\u00fado da anota\u00e7\u00e3o"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "ideia_espontanea",
+        "feedback",
+        "comentario",
+        "insight"
+      ],
+      "default": "ideia_espontanea"
+    }
+  },
+  "required": [
+    "titulo",
+    "conteudo"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
