@@ -1,0 +1,47 @@
+{
+  "name": "HistoricoPostagem",
+  "type": "object",
+  "properties": {
+    "tipo_conteudo": {
+      "type": "string",
+      "enum": [
+        "stories",
+        "reels",
+        "feed",
+        "carrossel"
+      ],
+      "description": "Tipo de conte\u00fado postado"
+    },
+    "horario_postagem": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Quando foi postado"
+    },
+    "dia_semana": {
+      "type": "number",
+      "description": "Dia da semana (0-6)"
+    },
+    "engajamento": {
+      "type": "number",
+      "description": "N\u00edvel de engajamento (opcional)"
+    }
+  },
+  "required": [
+    "tipo_conteudo",
+    "horario_postagem"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
