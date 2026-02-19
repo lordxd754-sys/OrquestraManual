@@ -1,0 +1,78 @@
+{
+  "name": "MetaFinanceira",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "description": "T\u00edtulo da meta"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "economia",
+        "receita",
+        "reducao_despesa",
+        "saldo_alvo"
+      ],
+      "default": "economia",
+      "description": "Tipo de meta financeira"
+    },
+    "valor_alvo": {
+      "type": "number",
+      "description": "Valor alvo a ser atingido"
+    },
+    "valor_atual": {
+      "type": "number",
+      "default": 0,
+      "description": "Progresso atual"
+    },
+    "prazo": {
+      "type": "string",
+      "format": "date",
+      "description": "Data limite da meta"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "trabalho",
+        "alimentacao",
+        "transporte",
+        "saude",
+        "lazer",
+        "educacao",
+        "casa",
+        "outros"
+      ],
+      "description": "Categoria relacionada (opcional)"
+    },
+    "ativa": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se a meta est\u00e1 ativa"
+    },
+    "concluida": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "titulo",
+    "tipo",
+    "valor_alvo",
+    "prazo"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
