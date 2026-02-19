@@ -1,0 +1,58 @@
+{
+  "name": "ConfiguracaoNotificacao",
+  "type": "object",
+  "properties": {
+    "tipo_conteudo": {
+      "type": "string",
+      "enum": [
+        "stories",
+        "reels",
+        "feed",
+        "carrossel"
+      ],
+      "description": "Tipo de conte\u00fado"
+    },
+    "horarios": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Hor\u00e1rios configurados (HH:mm)"
+    },
+    "dias_semana": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Dias da semana (0-6)"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "horarios_sugeridos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Hor\u00e1rios sugeridos baseados no comportamento"
+    }
+  },
+  "required": [
+    "tipo_conteudo"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
