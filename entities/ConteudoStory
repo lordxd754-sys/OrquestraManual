@@ -1,0 +1,54 @@
+{
+  "name": "ConteudoStory",
+  "type": "object",
+  "properties": {
+    "conteudo": {
+      "type": "string",
+      "description": "O que postar no story"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "rotina",
+        "educativo",
+        "prova_social",
+        "venda",
+        "bastidores"
+      ],
+      "default": "educativo",
+      "description": "Tipo do story"
+    },
+    "cta": {
+      "type": "string",
+      "description": "Call to action sugerido"
+    },
+    "postado": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se j\u00e1 foi postado"
+    },
+    "data_postagem": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data que foi postado"
+    }
+  },
+  "required": [
+    "conteudo",
+    "tipo"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
