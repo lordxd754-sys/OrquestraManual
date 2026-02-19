@@ -1,0 +1,39 @@
+{
+  "name": "Conversa",
+  "type": "object",
+  "properties": {
+    "mensagem_usuario": {
+      "type": "string",
+      "description": "Mensagem enviada pelo usu\u00e1rio"
+    },
+    "resposta_ia": {
+      "type": "string",
+      "description": "Resposta da IA"
+    },
+    "acoes_executadas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista de a\u00e7\u00f5es que foram executadas"
+    }
+  },
+  "required": [
+    "mensagem_usuario",
+    "resposta_ia"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
